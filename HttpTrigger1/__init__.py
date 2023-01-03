@@ -11,7 +11,7 @@ def main(req: func.HttpRequest, inputDocument: func.DocumentList) -> str:
         user_json = {
           ## "id": user['id'],
            ##"partitionkey": user['testpartitionkey'],
-           "visit nr is: ": user['visitor']
+           "visit nr is this: ": user['visitor']
         }
         users_json.append(user_json)
 
