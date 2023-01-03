@@ -1,0 +1,31 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "route": "visit/{partitionKey}/{id}",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "inputDocument",
+      "databaseName": "visitordb",
+      "collectionName": "visit",
+      "connectionStringSetting": "oyvindcloud2_DOCUMENTDB",
+      "id": "{id}",
+      "partitionKey": "{partitionKey}"
+    }
+  ]
+}
